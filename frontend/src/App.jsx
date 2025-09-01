@@ -9,11 +9,12 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 
 const App = () => {
   const [showlogin,setShowLogin]=useState(false)
+
   return (
     <>
-    {showlogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      {showlogin ? <LoginPopup setShowLogin={setShowLogin} /> : null}
       <div className='app'>
-        <Navbar setShowLogin={setShowLogin}/>
+        <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Cart' element={<Cart />} />
@@ -22,7 +23,6 @@ const App = () => {
       </div>
       <Footer />
     </>
-
   )
 }
 
